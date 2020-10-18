@@ -1,0 +1,545 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: white;
+}
+::selection {
+  background-color: transparent;
+}
+body {
+  background-color: #44464e;
+}
+
+.box {
+  background-color: #18191c;
+  border-radius: 1.5rem;
+  margin: 3rem auto;
+  transition: 0.3s;
+  cursor: pointer;
+  box-shadow: -6px -6px 10px rgb(109, 109, 109),6px 6px 10px rgb(26, 26, 26);
+}
+.box:hover {
+  transform: scale(1.1);
+}
+/* credits */
+.creditbox{
+  width: 15rem;
+  display: flex;
+  justify-content: center;
+  padding: 1rem .5rem;
+}
+
+.creditbox p span{
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1749ff;
+}
+
+/* Messagebox */
+.messagebox {
+  width: 20rem;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inbox {
+  width: 94%;
+  height: 80%;
+  background-color: #212121;
+  border-radius: 1.1rem;
+  position: relative;
+}
+.msgcount {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  border-radius: 50%;
+  background-color: #fe005d;
+}
+.msgcount p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 1rem;
+  transform: translate(-50%, -50%);
+}
+.msgactionbox {
+  display: flex;
+  position: absolute;
+  top: 90%;
+  right: 3%;
+  width: 62%;
+  justify-content: space-between;
+}
+.discard,
+.reply {
+  position: relative;
+  padding: 1.2rem 2.8rem;
+  border-radius: 0.7rem;
+  transition: 0.1s;
+}
+.discard:active,
+.reply:active {
+  background-color: black;
+  transform: scale(1.1);
+}
+.discard {
+  background-color: #3c3c3c;
+}
+.reply {
+  background-color: #1749ff;
+}
+.discard p,
+.reply p {
+  position: absolute;
+  font-weight: 500;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.innbox {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.1rem;
+  overflow: hidden;
+  display: flex;
+}
+.profilepic {
+  height: 100%;
+  width: 25%;
+  border-radius: 1.1rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+.profilepic img {
+  max-width: 100%;
+  height: auto;
+}
+.msgdata {
+  width: 60%;
+  height: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.persname {
+  font-weight: 600;
+}
+.persmsg {
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-top: -0.2rem;
+  color: #cbcbcb;
+}
+
+/* Main logo */
+.mainlogo {
+  width: 10rem;
+}
+
+/* The light box */
+.tlightbox {
+  width: 4rem;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+.tlightbox,
+.yellicon,
+.bluicon {
+  display: flex;
+}
+.bluicon {
+  margin-top: 0.45rem;
+}
+
+/* Switches */
+.switches {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  width: 5rem;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 5rem;
+  height: 2.5rem;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #212121;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 85%;
+  width: 40%;
+  top: 50%;
+  left: 4%;
+  transform: translateY(-50%);
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #1749ff;
+}
+
+input:checked + .slider:before {
+  transform: translateY(-50%) translateX(132%);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* searchbox */
+.searchbox {
+  background-color: transparent;
+  display: flex;
+  width: 16rem;
+  position: relative;
+}
+.searchbox input {
+  background-color: #18191c;
+  border: none;
+  outline: none;
+  width: 16rem;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+}
+.searchbox input::placeholder {
+  font-weight: 500;
+  color: rgb(209, 209, 209);
+}
+.searchbox .srchicon {
+  width: 3rem;
+  position: absolute;
+  top: -30%;
+  right: 5%;
+}
+
+.sbtn:active {
+  transform: scale(1.1);
+}
+.sbtn rect {
+  transition: 0.1s;
+}
+.sbtn:active rect {
+  fill: #000;
+}
+
+/* Checklike box */
+.checklikebox {
+  width: 17rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+.checkhead {
+  display: flex;
+  justify-content: space-around;
+  height: 3rem;
+  margin-bottom: 0.4rem;
+}
+.chtitle {
+  background-color: #3c3c3c;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.7rem;
+}
+.arrow {
+  width: 20%;
+}
+.checkbox {
+  display: flex;
+  flex-direction: column;
+}
+/* Customize the label (the container) */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #44464e;
+  border-radius: 0.4rem;
+}
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #1749ff;
+}
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.checkbox label {
+  color: #c4c4c4;
+  font-size: 0.9rem;
+  margin: 0.4rem;
+  font-weight: 500;
+}
+
+/* selectbox */
+.selectionbox {
+  width: 16rem;
+}
+.selbtn .targt {
+  transition: 0.1s;
+}
+.targt:active {
+  fill: #000;
+}
+
+/* stylebox */
+.stylebox {
+  display: flex;
+  position: relative;
+  width: 17rem;
+  height: 20rem;
+  padding: 1rem;
+}
+.sfavlogo {
+  position: absolute;
+  top: -7%;
+  left: -7%;
+  width: 3.5rem;
+}
+.instly {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.sdata {
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.spic {
+  width: 100%;
+  height: 20rem;
+  border-radius: 1rem;
+  background-color: rgb(88, 88, 88);
+  background-image: url(./resources/spic.jpg);
+  background-size: cover;
+}
+.stitle {
+  font-size: 1.1rem;
+  margin-left: 0.5rem;
+}
+.subtitle {
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
+  color: #c4c4c4;
+}
+
+/* smallstylebox */
+.smallstylebox {
+  display: flex;
+  position: relative;
+  width: 14rem;
+  height: 16rem;
+  padding: 1rem;
+}
+.smallinstly {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.smalldata {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fe005d;
+  border-radius: 1rem;
+  margin-top: 1rem;
+}
+.smalldata p {
+  font-weight: 600;
+}
+.smallpic {
+  width: 100%;
+  height: 20rem;
+  border-radius: 1rem;
+  background-color: rgb(88, 88, 88);
+  background-image: url(./resources/harley.jpg);
+  background-size: cover;
+}
+
+.smalldata {
+  transition: 0.1s;
+}
+.smalldata:active {
+  transform: scale(1.1);
+  background-color: #000;
+}
+
+/* Maxwell box */
+.maxstylebox {
+  display: flex;
+  position: relative;
+  width: 18rem;
+  height: 28rem;
+  padding: 1rem;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.maxpic {
+  width: 100%;
+  height: 18rem;
+  background-color: #3d3d3d;
+  border-radius: 1rem;
+  background-image: url(./resources/maxwell.jpg);
+  background-size: cover;
+  position: relative;
+}
+.maxactbox {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  height: 3rem;
+  width: 8rem;
+  bottom: -10%;
+  right: 2%;
+}
+.heart,
+.comentcount {
+  height: 100%;
+}
+
+.maxdata {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.6rem;
+}
+.maxname {
+  font-weight: 600;
+}
+.maxmsg {
+  font-size: 0.8rem;
+  color: #c4c4c4;
+}
+.maxcomntbox {
+  display: flex;
+  width: 100%;
+  height: 3rem;
+  justify-content: space-between;
+}
+
+.maxcomntbox input {
+  width: 79%;
+  background-color: #3c3c3c;
+  border: none;
+  outline: none;
+  padding: 0.2rem 1rem;
+  border-radius: 1rem;
+}
+.maxcomntbox input::placeholder {
+  font-weight: 600;
+}
+.maxcomntbox .sendlogo {
+  width: 3rem;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px #44464e;
+  -webkit-box-shadow: inset 0 0 6px #44464e;
+  border-radius: 10px;
+  background-color: #44464e;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: #44464e;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+  background-color: #2e2e2e;
+}
